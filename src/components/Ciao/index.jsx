@@ -8,6 +8,10 @@ class Ciao extends Component {
             isSelect: false,
         };
     }
+    handlerClickInButton = () => {
+        const { isHi } = this.state;
+        this.setState({ isHi: !isHi })
+    }
     render() {
         const { isHi } = this.state;
         console.log(this.props);
@@ -15,6 +19,7 @@ class Ciao extends Component {
         return (
             <article>
                 <h2>{isHi ? 'Hi' : 'Bye'}, {name}! ({age})</h2>
+                <button onClick={this.handlerClickInButton}>switch</button>
                 <p>gender:{isMale ? 'male' : 'female'}</p>
             </article>
         );
