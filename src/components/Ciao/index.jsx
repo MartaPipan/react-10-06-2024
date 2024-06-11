@@ -4,15 +4,16 @@ class Ciao extends Component {
     constructor() {
         super();
         this.state = {
-            isHi: true
-        }
+            isHi: true,
+            isSelect: false,
+        };
     }
     render() {
         console.log(this.props);
         const { name, age, isMale } = this.props;
         return (
             <article>
-                <h2>Hi, {name}! ({age})</h2>
+                <h2>{isHi ? 'Hi' : 'Bye'}, {name}! ({age})</h2>
                 <p>gender:{isMale ? 'male' : 'female'}</p>
             </article>
         );
