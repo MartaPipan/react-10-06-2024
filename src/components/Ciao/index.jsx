@@ -9,6 +9,7 @@ class Ciao extends Component {
         };
     }
     render() {
+        const { isHi } = this.state;
         console.log(this.props);
         const { name, age, isMale } = this.props;
         return (
