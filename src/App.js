@@ -1,12 +1,11 @@
 import "./App.css";
-import Ciao from "./components/Ciao";
+import CiaoList from "./components/CiaoList";
+
 
 function App() {
   return (
     <>
-      <Ciao name="Fred" age={43} isMale />
-      <Ciao name="Bred" age={45} isMale />
-      <Ciao name="Ana" age={27} />
+      <CiaoList/>
     </>
   );
 }
