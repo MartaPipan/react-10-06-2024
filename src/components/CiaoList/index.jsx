@@ -25,31 +25,23 @@ class CiaoList extends Component {
           isMale: false,
         },
       ],
+      isUpSort: true,
     };
   }
   sortUsersByAge = () => {
-    const { users } = this.state; //users - variable
-    //створити копію масива і вже новий масив встановити в стан!!!
-    //мутувати стан заборонено!!!
-    //1 спосіб - поверхнева копія за допомогою спред оператора
-    //const usersCopy = [...users];
-    //usersCopy.sort((userA, userB) => userA.age - userB.age);
-    //2 спосіб - поверхнева копія за допомогою toSorted
-    //const usersCopy = users.toSorted((userA, userB) => userA.age - userB.age);
-    //3 спосіб - глибока копія за допомогою JSON
-    //virtual DOM and real DOM https://uk.legacy.reactjs.org/docs/reconciliation.html
+    const { users, isUpSort} = this.state; //users - variable
     const usersCopy = JSON.parse(JSON.stringify(users));
-    usersCopy.sort((userA, userB) => userA.age - userB.age);
-    this.setState({ users: usersCopy });
+    usersCopy.sort((userA, userB) => isUpSort?userA.age - userB.age:userB.age-userA.age);
+    this.setState({ users: usersCopy, isUpSort:!isUpSort });
   };
   mapUsers = ({ id, name, age, isMale },i) => (
     <Ciao key={id} name={name} age={age} isMale={isMale} />
   );
   render() {
-    const { users } = this.state;
+    const { users,isUpSort} = this.state;
     return (
       <>
-        <button onClick={this.sortUsersByAge}>sort by age</button>
+        <button onClick={this.sortUsersByAge}>sort{isUpSort?'Up':'Down'} by age</button>
         <section>{users.map(this.mapUsers)}</section>;
       </>
     );
