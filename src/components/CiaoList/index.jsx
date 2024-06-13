@@ -30,9 +30,14 @@ class CiaoList extends Component {
   }
   sortUsersByAge = () => {
     const { users, isUpSort} = this.state; //users - variable
-    const usersCopy = JSON.parse(JSON.stringify(users));
-    usersCopy.sort((userA, userB) => isUpSort?userA.age - userB.age:userB.age-userA.age);
-    this.setState({ users: usersCopy, isUpSort:!isUpSort });
+    // поверхнева копія використовується для об'єктів першого порядку
+    // об'єкти першого порядку - це такі об'єкти значеннями властивостей яких є примітиви
+    this.setState({
+      users: users.toSorted((userA, userB) =>
+        isUpSort ? userA.age - userB.age : userB.age - userA.age
+      ),
+      isUpSort: !isUpSort,
+    });
   };
   mapUsers = ({ id, name, age, isMale },i) => (
     <Ciao key={id} name={name} age={age} isMale={isMale} />
