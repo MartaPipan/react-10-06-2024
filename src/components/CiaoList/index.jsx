@@ -42,8 +42,8 @@ class CiaoList extends Component {
     usersCopy.sort((userA, userB) => userA.age - userB.age);
     this.setState({ users: usersCopy });
   };
-  mapUsers = ({ id, name, age, isMale }, index) => (
-    <Ciao key={index} name={name} age={age} isMale={isMale} />
+  mapUsers = ({ id, name, age, isMale },i) => (
+    <Ciao key={id} name={name} age={age} isMale={isMale} />
   );
   render() {
     const { users } = this.state;
