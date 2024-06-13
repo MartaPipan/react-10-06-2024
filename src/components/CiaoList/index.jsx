@@ -37,6 +37,7 @@ class CiaoList extends Component {
     //2 спосіб - поверхнева копія за допомогою toSorted
     //const usersCopy = users.toSorted((userA, userB) => userA.age - userB.age);
     //3 спосіб - глибока копія за допомогою JSON
+    //virtual DOM and real DOM https://uk.legacy.reactjs.org/docs/reconciliation.html
     const usersCopy = JSON.parse(JSON.stringify(users));
     usersCopy.sort((userA, userB) => userA.age - userB.age);
     this.setState({ users: usersCopy });
