@@ -33,7 +33,7 @@ class CiaoList extends Component {
   sortUsersByName = () => {
     const { users, isUpSortByName } = this.state;
     this.setState({
-      users: users.toSorted((userA, userB) => {
+      users: users.toSorted((userA, userB) => {    //sort like toSorted exemple in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
         const userNameA = userA.name.toUpperCase(); // ignore upper and lowercase
         const userNameB = userB.name.toUpperCase(); // ignore upper and lowercase
         if (userNameA < userNameB) {
