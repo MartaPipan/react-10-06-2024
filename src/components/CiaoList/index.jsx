@@ -27,8 +27,9 @@ class CiaoList extends Component {
       ],
     };
   }
-  mapUsers = ({ id, name, age, isMale }) => (
-    <li key={id}>
+  mapUsers = ({ id, name, age, isMale }, index) => (
+    //<li key={id}>
+    <li key={index}> substituir id obrigatorio  por key index 
       <Ciao name={name} age={age} isMale={isMale} />
     </li>
   );
