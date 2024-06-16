@@ -83,7 +83,7 @@ class CiaoList extends Component {
       isUpSortByAge: !isUpSortByAge,
     });
   };
-
+//батьківський елемент описує механізм через який дочірній елемент зможе змінити стан батьківського
   userSelected = (id) => {
     const { users } = this.state;
     this.setState({

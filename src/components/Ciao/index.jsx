@@ -11,20 +11,26 @@ class Ciao extends Component {
     const { isHi } = this.state;
     this.setState({ isHi: !isHi });
   };
-    
+  handlerClickSelect = () => {
+    const {
+      user: { id },
+      userSelected,
+    } = this.props;
+    userSelected(id);
+  };
+
   render() {
     const { isHi } = this.state;
     console.log(this.props);
     const {
-      user: { name,surname, age, isMale, isSelected, id },
-      userSelected,
+      user: { name, surname, age, isMale, isSelected },
     } = this.props;
     const colorBG = isSelected ? "aqua" : "#eee";
+
+
     return (
       <article
-        onClick={() => {
-          userSelected(id);
-        }}
+        onClick={this.handlerClickSelect}
         style={{ backgroundColor: colorBG }}
       >
         <h2>
