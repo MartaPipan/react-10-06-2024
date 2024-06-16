@@ -118,15 +118,6 @@ class CiaoList extends Component {
       this.state;
     return (
       <>
-        <button onClick={this.sortUsersByName}>
-          sort{isUpSortByName ? "Up" : "Down"} by name
-        </button>
-        <button onClick={this.sortUsersBySurname}>
-          sort{isUpSortBySurname ? "Up" : "Down"} by surname
-        </button>
-        <button onClick={this.sortUsersByAge}>
-          sort{isUpSortByAge ? "Up" : "Down"} by age
-        </button>
         <section>{users.map(this.mapUsers)}</section>;
       </>
     );
