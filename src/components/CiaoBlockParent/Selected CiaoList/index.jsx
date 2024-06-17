@@ -3,10 +3,14 @@ import SelectedCiaoList from './index';
 
 class SelectedCiaoList extends Component {
     render() {
+        const { users } = this.props;
+        const selectedUsers = users.filter((user)=>user.isSelect)
         return (
-            <div>
-                SelectedCiaoList 
-            </div>
+            <ul>
+                {selectedUsers.map((user) => (
+                    <li key={user.id}>user.name</li>
+                ))}
+            </ul> 
         );
     }
 }
