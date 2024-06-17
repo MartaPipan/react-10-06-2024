@@ -1,5 +1,5 @@
 import "./App.css";
-import CiaoList from "./components/CiaoList";
+import CiaoList from "./components/CiaoBlockParent/CiaoList";
 
 
 function App() {
